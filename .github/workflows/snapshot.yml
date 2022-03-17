@@ -54,6 +54,12 @@ jobs:
         name: production-file
         path: ./build
 
+    - name: Deploy to Netlify
+      uses: jsmrcaga/action-netlify-deploy@v1.1.0
+      with:
+        name: production-file
+        path: ./build
+
     - name: deploy to gh-pages
       uses: peaceiris/actions-gh-pages@v3
       with: 
