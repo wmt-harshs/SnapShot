@@ -23,7 +23,7 @@ jobs:
     - name: install node.js
       uses: actions/setup-node@v1
       with:
-        node-version: '16'
+        node-version: 16
     
     - name: install npm packages
       run: npm ci
@@ -57,5 +57,5 @@ jobs:
     - name: deploy to gh-pages
       uses: peaceiris/action-gh-pages@v3
       with: 
-        github_token: ${{ secrate.GITHUB_TOKEN }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./build
