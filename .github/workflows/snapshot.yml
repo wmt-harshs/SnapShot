@@ -26,10 +26,13 @@ jobs:
         node-version: '16'
     
     - name: install npm packages
-      uses: npm ci
+      run: npm ci
 
     - name: build project
-      uses: npm run test
+      run: npm run build
+
+    - name: run tests
+      run: npm run test
 
     - name: upload production
       uses: actions/upload-artifact@v2
