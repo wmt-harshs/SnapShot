@@ -38,7 +38,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: production-file
-        uses: ./build
+        path: ./build
 
   deploy:
     name: deploy
@@ -52,7 +52,7 @@ jobs:
       uses: actions/download-artifacrt@v2
       with:
         name: production-file
-        uses: ./build
+        path: ./build
 
     - name: deploy to gh-pages
       uses: peaceiris/action-gh-pages@v3
