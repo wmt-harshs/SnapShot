@@ -55,9 +55,12 @@ jobs:
         path: ./build
 
     - name: Deploy to Netlify
+    
       uses: jsmrcaga/action-netlify-deploy@v1.1.0
       with:
         NETLIFY_AUTH_TOKEN: ${{ secrets.MY_NETLIFY_AUTH_TOKEN }}
+        build_command: "echo hello"
+        install_command: "echo hello"
         NETLIFY_DEPLOY_TO_PROD: true
 
     - name: deploy to gh-pages
