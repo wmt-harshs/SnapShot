@@ -68,4 +68,12 @@ jobs:
       with: 
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./build
+
+    - name: deploy on vercel
+      uses: amondnet/vercel-action@v20 #deploy
+      with:
+        vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
+        vercel-org-id: ${{ secrets.ORG_ID}}  #Required
+        vercel-project-id: ${{ secrets.PROJECT_ID}} #Required 
+        working-directory: ./sub-directory
         
