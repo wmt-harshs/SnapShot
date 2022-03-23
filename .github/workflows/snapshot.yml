@@ -54,14 +54,14 @@ jobs:
         name: production-file
         path: ./build
 
-    - name: Deploy to Netlify
-      uses: jsmrcaga/action-netlify-deploy@v1.1.0
-      with:
-        NETLIFY_AUTH_TOKEN: ${{ secrets.MY_NETLIFY_AUTH_TOKEN }}
-        build_command: "echo hello"
-        install_command: "echo hello"
-        NETLIFY_SITE_ID: 891ba696-551b-4a14-822d-4a0b46137b0e
-        NETLIFY_DEPLOY_TO_PROD: true
+    # - name: Deploy to Netlify
+    #   uses: jsmrcaga/action-netlify-deploy@v1.1.0
+    #   with:
+    #     NETLIFY_AUTH_TOKEN: ${{ secrets.MY_NETLIFY_AUTH_TOKEN }}
+    #     build_command: "echo hello"
+    #     install_command: "echo hello"
+    #     NETLIFY_SITE_ID: 891ba696-551b-4a14-822d-4a0b46137b0e
+    #     NETLIFY_DEPLOY_TO_PROD: true
 
     - name: deploy to gh-pages
       uses: peaceiris/actions-gh-pages@v3
@@ -69,11 +69,11 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./build
 
-    - name: deploy on vercel
-      uses: amondnet/vercel-action@v20 #deploy
-      with:
-        vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
-        vercel-org-id: ${{ secrets.ORG_ID}}  #Required
-        vercel-project-id: ${{ secrets.PROJECT_ID}} #Required 
-        working-directory: ./sub-directory
+    # - name: deploy on vercel
+    #   uses: amondnet/vercel-action@v20 #deploy
+    #   with:
+    #     vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
+    #     vercel-org-id: ${{ secrets.ORG_ID}}  #Required
+    #     vercel-project-id: ${{ secrets.PROJECT_ID}} #Required 
+    #     working-directory: ./sub-directory
         
